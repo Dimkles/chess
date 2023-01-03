@@ -16,9 +16,9 @@ const Timer: FC<TimerProps> = ({ currentPlayer, restart }) => {
 
     useEffect(() => {
         startTimer()
-    }, [currentPlayer])
+    }, [currentPlayer, startTimer])
 
-    const startTimer = () => {
+    function startTimer() {
         if (timer.current) {
             clearInterval(timer.current)
         }

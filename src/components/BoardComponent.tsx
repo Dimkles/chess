@@ -29,14 +29,13 @@ const BoardComponent: FC<BoardComponentProps> = ({ board, setBoard, currentPlaye
         }
     }
 
-    useEffect(() => {
-        highlightCells()
-    }, [selectedCell])
-
     const highlightCells = () => {
         board.highlightCells(selectedCell)
         updateBoard()
     }
+    useEffect(() => {
+        highlightCells()
+    }, [selectedCell])
 
     const updateBoard = () => {
         const newBoard = board.getCopyBoard()
